@@ -14,8 +14,9 @@ function btnHoverEffect(obj) {
   console.log(hoverBtn);
 
   hoverBtn.forEach((btn) => {
-    const wArrow = btn.document.querySelector(obj.wArrow);
-    const bArrow = btn.document.querySelector(obj.bArrow);
+    const wArrow = btn.querySelector(obj.wArrow);
+    const bArrow = btn.querySelector(obj.bArrow);
+    console.log(wArrow);
 
     btn.addEventListener('mouseenter', function () {
       wArrow.style.display = 'block';
@@ -30,3 +31,15 @@ function btnHoverEffect(obj) {
 }
 
 btnHoverEffect(btnObj); //함수 호출
+
+//Swiper Plugin Codes
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  loop: true,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
